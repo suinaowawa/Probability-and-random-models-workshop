@@ -1,0 +1,26 @@
+clc;
+clear all;
+throw = 0;
+i = 1;
+while 1
+    d1 = randi(2);
+    d2 = randi(2);
+    outcome(i) = d1+d2;
+    
+    if ((outcome(i) == 2))
+        disp('player lost');
+
+        break
+    end
+
+    if ((outcome(1)~=2))
+        throw = outcome(1,1);
+    end
+    elsif((outcome(1,i) == throw)&&(i~=1) )
+        x = sprintf('player has won on NO.%d throw ',i);
+        disp(x)
+        break
+    end
+     i = i+1;
+end
+disp('the game is over');
